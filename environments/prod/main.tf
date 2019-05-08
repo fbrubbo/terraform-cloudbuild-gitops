@@ -5,7 +5,7 @@ provider "google" {
 module "project" {
   source = "../../modules/project"
   name = "${var.project}"
-  org_id = "${var.org_id}"
+  folder_id = "${var.folder_id}"
   billing_account = "${var.billing_account}"
   editors = "${var.project_editors}"  
 }
