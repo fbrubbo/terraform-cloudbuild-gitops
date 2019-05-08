@@ -1,0 +1,23 @@
+steps:
+- id: 'tf init'
+  name: 'hashicorp/terraform'
+  dir: deployments/environments/$BRANCH_NAME
+  args: [ 'init']
+
+- id: 'tf plan'
+  name: 'hashicorp/terraform'
+  dir: deployments/environments/$BRANCH_NAME
+  args: [ 'plan', '-out=terraform.tfplan']
+
+- id: 'tf validate'
+  name: 'ubuntu'
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  - | 
+     echo "[REMOVE THIS STEP] Validated branch $BRANCH_NAME!"
+
+- id: 'tf apply'
+  name: 'hashicorp/terraform'
+  dir: deployments/environments/$BRANCH_NAME
+  args: [ 'apply', '-auto-approve']
