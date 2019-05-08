@@ -1,6 +1,6 @@
 variable "name" {}
 
-variable "org_id' {}
+variable "org_id" {}
 
 variable "billing_account" {}
 
