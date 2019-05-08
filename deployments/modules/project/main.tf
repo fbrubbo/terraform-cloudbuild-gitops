@@ -5,8 +5,7 @@ terraform {
 resource "google_project" "project" {   
   name = "${var.project}"
   project_id = "${var.project}"
-  billing_account = "${var.billing_id}"
-  folder_id = "${var.folder_id}"
+  billing_account = "${var.billing_account}"
 }
 
 data "google_iam_policy" "editors" {

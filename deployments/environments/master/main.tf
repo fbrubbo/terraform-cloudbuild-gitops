@@ -6,4 +6,5 @@ module "project" {
   source = "../../modules/project"
   project = "${var.project}"
   project_editors = "${var.project_editors}"
+  billing_account = "${billing_account}"  
 }
