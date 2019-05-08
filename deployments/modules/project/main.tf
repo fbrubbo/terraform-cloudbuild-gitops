@@ -1,6 +1,7 @@
 terraform {
   required_version = ">= 0.11.13"
 }
+
 resource "google_project" "project" {   
   name = "${var.project}"
   project_id = "${var.project}"
@@ -11,7 +12,7 @@ resource "google_project" "project" {
 data "google_iam_policy" "editors" {
   binding = {
     role = "roles/editor"
-    members = var.project_editors    
+    members = "${var.project_editors}"
   }
 }
 
