@@ -4,10 +4,10 @@ steps:
   dir: deployments/environments/$BRANCH_NAME
   args: [ 'init']
 
-- id: 'tf plan'
-  name: 'hashicorp/terraform'
-  dir: deployments/environments/$BRANCH_NAME
-  args: [ 'plan', '-out=terraform.tfplan']
+# - id: 'tf plan'
+#   name: 'hashicorp/terraform'
+#   dir: deployments/environments/$BRANCH_NAME
+#   args: [ 'plan', '-out=terraform.tfplan']
 
 - id: 'tf validate'
   name: 'ubuntu'
