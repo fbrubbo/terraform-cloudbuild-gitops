@@ -5,6 +5,7 @@ terraform {
 resource "google_project" "project" {   
   name = "${var.name}"
   project_id = "${var.name}"
+  org_id   = "${var.org_id}"  
   billing_account = "${var.billing_account}"
 }
 

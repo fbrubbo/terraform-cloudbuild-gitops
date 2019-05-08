@@ -1,7 +1,9 @@
 variable "name" {}
 
+variable "org_id' {}
+
+variable "billing_account" {}
+
 variable "editors" {
   type = "list"
 }
-
-variable "billing_account" {}
