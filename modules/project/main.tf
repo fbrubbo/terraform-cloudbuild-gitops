@@ -22,7 +22,7 @@ resource "google_project_iam_policy" "project_iam" {
 }
 
 resource "google_project_services" "services" {
-  project = "${var.project}"
+  project = "${google_project.project.project_id}"
   services = [
     "cloudbuild.googleapis.com", 
     "containerregistry.googleapis.com",
