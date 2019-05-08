@@ -3,15 +3,15 @@ terraform {
 }
 
 resource "google_project" "project" {   
-  name = "${var.project}"
-  project_id = "${var.project}"
+  name = "${var.name}"
+  project_id = "${var.name}"
   billing_account = "${var.billing_account}"
 }
 
 data "google_iam_policy" "editors" {
   binding = {
     role = "roles/editor"
-    members = "${var.project_editors}"
+    members = "${var.editors}"
   }
 }
 

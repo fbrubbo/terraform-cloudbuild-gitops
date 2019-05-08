@@ -1,7 +1,7 @@
-variable "project" {}
+variable "name" {}
 
-variable "project_editors" {
-    type = "list"
+variable "editors" {
+  type = "list"
 }
 
 variable "billing_account" {}
