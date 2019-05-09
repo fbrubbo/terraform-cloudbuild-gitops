@@ -9,6 +9,7 @@ cd ../environments/master
 terraform init
 terraform plan
 terraform apply
+terraform destroy
 ```
 
 # Promoting your environment to production 
@@ -22,4 +23,5 @@ cd ../prod
 terraform init
 terraform plan
 terraform apply
+terraform destroy
 ```
