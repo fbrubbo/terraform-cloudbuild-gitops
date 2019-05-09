@@ -1,1 +1,0 @@
-project="terraform-cloudbuild-gitops"
