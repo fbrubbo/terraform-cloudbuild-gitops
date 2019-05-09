@@ -6,14 +6,20 @@ provider "google" {
   project = "${var.project}" 
 }
 
-module "apache2" {
-  source = "../../modules/apache2"
-  project = "${var.project}"  
+module "vpc" {
+  source = "../../modules/vpc"
+  project = "${var.project}"
   env = "${local.env}"
+}
+
+module "http_server" {
+  source = "../../modules/http_server"
+  project = "${var.project}"  
+  subnet = "${module.vpc.subnet}"
 }
 
 module "firewall" {
   source = "../../modules/firewall"
   project = "${var.project}"  
-  env = "${local.env}"
+  subnet = "${module.vpc.subnet}"  
 }
