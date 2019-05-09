@@ -1,12 +1,4 @@
 steps:
-- id: 'env'
-  name: 'ubuntu'
-  entrypoint: 'bash'
-  args: 
-  - '-c'
-  - |
-     echo "Installing environment $BRANCH_NAME"
-
 - id: 'tf init'
   name: 'hashicorp/terraform'
   dir: environments/$BRANCH_NAME
