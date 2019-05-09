@@ -1,4 +1,4 @@
-# Configuring your 'master' environment
+# Configuring your **dev** environment
 
 Just for demostration, this step will:
  1. Configure an apache2 http server on network '**master**' and subnet '**master**-subnet-01'
@@ -12,7 +12,7 @@ terraform apply
 terraform destroy
 ```
 
-# Promoting your environment to production 
+# Promoting your environment to **production**
 
 Once you have tested your app (in this example an apache2 http server), you can promote your configuration to prodution. This step will:
  1. Configure an apache2 http server on network '**prod**' and subnet '**prod**-subnet-01'
