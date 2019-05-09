@@ -1,19 +1,3 @@
-# Set Up the environments
-
-This step will create two VPCs
-
- * master
-   * Containing a subnet named 'master-subnet-01'
- * prod
-   * Containing a subnet named 'prod-subnet-01'
-
-```bash
-cd setup
-terraform init
-terraform plan
-terraform apply
-```
-
 # Configuring your 'master' environment
 
 Just for demostration, this step will:
