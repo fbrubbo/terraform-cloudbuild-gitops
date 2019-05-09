@@ -1,6 +1,6 @@
 steps:
 - id: 'env'
-  name: 'ubuntu'
+  name: 'alphine'
   entrypoint: 'bash'
   args: 
   - '-c'
