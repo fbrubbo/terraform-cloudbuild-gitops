@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
         bucket = "terraform-cloudbuild-gitops-tfstate"
-        prefix = "master"
+        prefix = "env/master"
     }
 }

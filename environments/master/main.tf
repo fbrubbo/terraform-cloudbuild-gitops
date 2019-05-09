@@ -1,16 +1,19 @@
+locals {
+  "env" = "master"
+}
+
 provider "google" { 
   project = "${var.project}" 
 }
 
-module "project" {
-  source = "../../modules/project"
-  name = "${var.project}"
-  folder_id = "${var.folder_id}"
-  billing_account = "${var.billing_account}"
-  editors = "${var.project_editors}"  
+module "apache2" {
+  source = "../../modules/apache2"
+  project = "${var.project}"  
+  env = "${local.env}"
 }
 
 module "firewall" {
   source = "../../modules/firewall"
   project = "${var.project}"  
+  env = "${local.env}"
 }
