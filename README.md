@@ -1,8 +1,8 @@
 # Configuring your 'master' environment
 
 Just for demostration, this step will:
- 1. Configure an apache2 webserver on subnet 'master-subnet-01'
- 2. Open port 80 on firewall for this webserver 
+ 1. Configure an apache2 http server on network '**master**' and subnet '**master**-subnet-01'
+ 2. Open port 80 on firewall for this http server 
 
 ```bash
 cd ../environments/master
@@ -14,9 +14,9 @@ terraform destroy
 
 # Promoting your environment to production 
 
-Once you have tested your app (in this example an apache2 webserver), you can promote your configuration to prodution. This step will:
- 1. Configure an apache2 webserver on subnet 'prod-subnet-01'
- 2. Open port 80 on firewall for this webserver 
+Once you have tested your app (in this example an apache2 http server), you can promote your configuration to prodution. This step will:
+ 1. Configure an apache2 http server on network '**prod**' and subnet '**prod**-subnet-01'
+ 2. Open port 80 on firewall for this http server 
 
 ```bash
 cd ../prod
