@@ -7,7 +7,7 @@ This step will create two VPCs
  * prod
    * Containing a subnet named 'prod-subnet-01'
 
-```
+```bash
 cd setup
 terraform init
 terraform plan
@@ -20,7 +20,7 @@ Just for demostration, this step will:
  1. Configure an apache2 webserver on subnet 'master-subnet-01'
  2. Open port 80 on firewall for this webserver 
 
-```
+```bash
 cd ../environments/master
 terraform init
 terraform plan
@@ -33,7 +33,7 @@ Once you have tested your app (in this example an apache2 webserver), you can pr
  1. Configure an apache2 webserver on subnet 'prod-subnet-01'
  2. Open port 80 on firewall for this webserver 
 
-```
+```bash
 cd ../prod
 terraform init
 terraform plan
