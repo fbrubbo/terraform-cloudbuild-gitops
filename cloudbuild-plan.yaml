@@ -1,4 +1,14 @@
 steps:
+- id: 'print'
+  name: 'ubuntu'
+  entrypoint: 'bash'  
+  args: 
+  - '-c'
+  - | 
+      echo "******************"
+      echo "$BRANCH_NAME"
+      echo "******************"
+
 - id: 'tf init'
   name: 'hashicorp/terraform'
   dir: environments/$BRANCH_NAME
