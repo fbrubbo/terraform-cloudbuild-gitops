@@ -18,3 +18,15 @@ steps:
   name: 'hashicorp/terraform'
   dir: environments/$BRANCH_NAME
   args: [ 'plan' ]
+  
+- id: 'tf apply'
+  name: 'hashicorp/terraform'
+  dir: environments/$BRANCH_NAME
+  args: [ 'plan' ]
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      echo "******************"
+      echo "SKIP APPLY $BRANCH_NAME"
+      echo "******************"
