@@ -32,3 +32,5 @@ steps:
       pwd
       ls -lt
       terraform --version
+      ls -lt ../../modules
+      terraform plan
