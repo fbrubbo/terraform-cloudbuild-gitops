@@ -27,11 +27,9 @@ steps:
   - '-c'
   - | 
       if [ $BRANCH_NAME = "master" ] || [ $BRANCH_NAME = "prod" ] ; then
-        echo "******************"
-        echo "APPLY $BRANCH_NAME"
-        echo "******************"
+        terraform apply -auto-approve
       else
-        echo "******************"
-        echo "SKIP $BRANCH_NAME"
-        echo "******************"
+        echo "*****************************"
+        echo "SKIPPING $BRANCH_NAME .."
+        echo "*****************************"
       fi
