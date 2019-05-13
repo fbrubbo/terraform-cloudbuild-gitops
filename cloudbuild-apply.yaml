@@ -1,0 +1,10 @@
+steps:
+- id: 'tf init'
+  name: 'hashicorp/terraform'
+  dir: environments/$BRANCH_NAME
+  args: [ 'init']
+
+- id: 'tf apply'
+  name: 'hashicorp/terraform'
+  dir: environments/$BRANCH_NAME
+  args: [ 'apply', '-auto-approve']
