@@ -1,6 +1,7 @@
 steps:
 - id: 'print'
   name: 'ubuntu'
+  entrypoint: 'bash'  
   args: 
   - '-c'
   - | 
