@@ -26,11 +26,13 @@ steps:
   args: 
   - '-c'
   - | 
-      echo "******************"
-      echo "SKIP APPLY $BRANCH_NAME"
-      echo "******************"
-      pwd
-      ls -lt
-      terraform --version
-      ls -lt ../../modules
-      terraform plan
+      APPLY_TO='master prod'
+      if [[ " $APPLY_TO " =~ .*\ $BRANCH_NAME\ .* ]]; then
+        echo "******************"
+        echo "APPLY $BRANCH_NAME"
+        echo "******************"
+      else
+        echo "******************"
+        echo "APPLY $BRANCH_NAME"
+        echo "******************"
+      fi
