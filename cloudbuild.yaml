@@ -16,13 +16,24 @@ steps:
 
 - id: 'tf plan'
   name: 'hashicorp/terraform'
-  dir: environments/$BRANCH_NAME
-  args: [ 'plan' ]
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      pwd
+      ls -lt
+      if [ $BRANCH_NAME = "master" ] || [ $BRANCH_NAME = "prod" ] ; then
+        cd environments/$BRANCH_NAME
+        terraform plan
+      else
+        cd environments/master && terraform plan
+        cd environments/prod && terraform plan
+      fi  
   
 - id: 'tf apply'
   name: 'hashicorp/terraform'
   dir: environments/$BRANCH_NAME
-  entrypoint: 'ash'
+  entrypoint: 'sh'
   args: 
   - '-c'
   - | 
