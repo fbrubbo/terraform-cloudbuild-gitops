@@ -1,1 +1,1 @@
-project="terraform-cloudbuild-gitops"
+project="PROJECT_ID"

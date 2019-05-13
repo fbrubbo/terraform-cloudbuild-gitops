@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
-        bucket = "terraform-cloudbuild-gitops-tfstate"
+        bucket = "PROJECT_ID-tfstate"
         prefix = "env/master"
     }
 }
