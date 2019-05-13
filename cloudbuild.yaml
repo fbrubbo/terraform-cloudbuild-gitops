@@ -22,7 +22,7 @@ steps:
 - id: 'tf apply'
   name: 'hashicorp/terraform'
   dir: environments/$BRANCH_NAME
-  entrypoint: 'sh'
+  entrypoint: 'ash'
   args: 
   - '-c'
   - | 
