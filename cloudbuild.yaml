@@ -29,4 +29,6 @@ steps:
       echo "******************"
       echo "SKIP APPLY $BRANCH_NAME"
       echo "******************"
-      terraform plan
+      pwd
+      ls -lt
+      terraform --version
