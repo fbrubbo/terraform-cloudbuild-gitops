@@ -9,7 +9,7 @@ steps:
       echo "$BRANCH_NAME"
       echo "******************"
 
-- id: 'tf plan'
+- id: 'tf init'
   name: 'hashicorp/terraform'
   entrypoint: 'sh'
   args: 
