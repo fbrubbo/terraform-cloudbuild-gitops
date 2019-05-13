@@ -26,13 +26,12 @@ steps:
   args: 
   - '-c'
   - | 
-      APPLY_TO='master prod'
-      if [[ " $APPLY_TO " =~ .*\ $BRANCH_NAME\ .* ]]; then
+      if [[ " master prod " =~ .*\ $BRANCH_NAME\ .* ]]; then
         echo "******************"
         echo "APPLY $BRANCH_NAME"
         echo "******************"
       else
         echo "******************"
-        echo "APPLY $BRANCH_NAME"
+        echo "SKIP $BRANCH_NAME"
         echo "******************"
       fi
