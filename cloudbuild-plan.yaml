@@ -1,0 +1,10 @@
+steps:
+- id: 'tf init'
+  name: 'hashicorp/terraform'
+  dir: environments/$BRANCH_NAME
+  args: [ 'init']
+
+- id: 'tf plan'
+  name: 'hashicorp/terraform'
+  dir: environments/$BRANCH_NAME
+  args: [ 'plan' ]
