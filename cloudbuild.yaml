@@ -1,5 +1,5 @@
 steps:
-- id: 'logging'
+- id: 'print branch name'
   name: 'alpine'
   entrypoint: 'sh'  
   args: 
@@ -14,13 +14,20 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - | 
-      if [ $BRANCH_NAME = "master" ] || [ $BRANCH_NAME = "prod" ] ; then
+  - |
+      if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
         terraform init
       else
-        cd environments/master && terraform init
-        cd ../prod && terraform init
+        for dir in environments/*/
+        do 
+          cd ${dir}   
+          env=${dir%*/}
+          env=${env#*/}  
+          echo "**** At environment ${env} ****"
+          terraform init
+          cd ../../
+        done
       fi 
 
 - id: 'tf plan'
@@ -29,13 +36,20 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ $BRANCH_NAME = "master" ] || [ $BRANCH_NAME = "prod" ] ; then
+      if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
         terraform plan
       else
-        cd environments/master && terraform plan
-        cd ../prod && terraform plan
-      fi  
+        for dir in environments/*/
+        do 
+          cd ${dir}   
+          env=${dir%*/}
+          env=${env#*/}  
+          echo "**** At environment ${env} ****"
+          terraform plan
+          cd ../../
+        done
+      fi 
   
 - id: 'tf apply'
   name: 'hashicorp/terraform'
