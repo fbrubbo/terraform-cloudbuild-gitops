@@ -64,7 +64,7 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ $BRANCH_NAME = "master" ] || [ $BRANCH_NAME = "prod" ] ; then
+      if [ -d "environments/$BRANCH_NAME/" ]; then
         terraform apply -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
