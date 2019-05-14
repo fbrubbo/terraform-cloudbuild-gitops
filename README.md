@@ -26,4 +26,3 @@ terraform apply
 terraform destroy
 ```
 
-test-7
