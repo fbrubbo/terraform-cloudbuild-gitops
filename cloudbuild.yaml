@@ -33,6 +33,7 @@ steps:
         done
       fi 
 
+# [START tf-plan]
 - id: 'tf plan'
   name: 'hashicorp/terraform'
   entrypoint: 'sh'
@@ -56,7 +57,9 @@ steps:
           cd ../../
         done
       fi 
-  
+# [END tf-plan]
+
+# [START tf-apply]
 - id: 'tf apply'
   name: 'hashicorp/terraform'
   entrypoint: 'sh'
@@ -71,3 +74,4 @@ steps:
         echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
         echo "*******************************************************************************"
       fi
+# [END tf-apply]      
